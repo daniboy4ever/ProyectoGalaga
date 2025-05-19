@@ -547,9 +547,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1893,7 +1893,7 @@ TextureImporter:
         width: 0
         height: 0
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1906,11 +1906,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bala
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 320
+        width: 3
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58f3491be166d24ca05b442c64cc76f
+      internalID: 830851737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4e99b730af598ba48a3035a0f946b5ed
     internalID: 0
     vertices: []
     indices: 
@@ -1931,6 +1953,7 @@ TextureImporter:
       abd_3_1: -1973705477746809072
       abd_3_2: 5617685952951785832
       abd_3_3: -3419992101828733786
+      bala: 830851737
       spritespng_0: 9002863111164860428
       spritespng_1: 6428300232072305231
       spritespng_10: 2817233736066390136
