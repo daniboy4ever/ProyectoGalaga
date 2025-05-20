@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1965373996267149035}
   - component: {fileID: 5354208076102296900}
   - component: {fileID: 3872374685518517328}
+  - component: {fileID: 774815779866526587}
   m_Layer: 0
   m_Name: redEnemy
   m_TagString: Untagged
@@ -110,3 +111,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &774815779866526587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265023781444238182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0930277, y: 0.102489285, z: 0.2}
+  m_Center: {x: -0.00013474525, y: -0.0006734848, z: 0}
