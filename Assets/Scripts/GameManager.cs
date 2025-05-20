@@ -16,31 +16,80 @@ public class GameManager : MonoBehaviour
     public float velocidad = 300f;
 
     //Lista de Enemigos
-    private List<GameObject> enemigos = new List<GameObject>();
+    private List<GameObject> enemigosO1 = new List<GameObject>();
+    private List<GameObject> enemigosO2 = new List<GameObject>();
+    private List<GameObject> enemigosO3 = new List<GameObject>();
+    private List<GameObject> enemigosO4 = new List<GameObject>();
 
-    public List<Vector2> posiciones = new List<Vector2>();
 
-    public List<Vector2> posicionesFormacion = new List<Vector2>()
+
+    public List<Vector2> posisAbej = new List<Vector2>()
     {
-    new Vector2(120, 298), new Vector2(-1, 3), new Vector2(0, 3),
-    new Vector2(1, 3), new Vector2(2, 3), new Vector2(3, 3)
+    new Vector2(100, 275), new Vector2(125, 275), new Vector2(100, 300), new Vector2(125, 300)
     };
 
+    public List<Vector2> posisMarip = new List<Vector2>()
+    {
+    new Vector2(100, 320), new Vector2(125, 320), new Vector2(100, 340), new Vector2(125, 340)
+    };
+
+    public List<List<Vector2>> posicionesO1 = new List<List<Vector2>>();
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        posicionesO1.Add(posisAbej);
+        posicionesO1.Add(posisMarip);
 
-        for (int i = 0; i < 6; i++)
+        //Instanciar ejercito
+
+        /*Primera ola*/
+        for (int i = 0; i < 4; i++)
         {
-            GameObject enemigo = Instantiate(abeja, new Vector2(0, 455), Quaternion.identity); //Quaternion (X, Y, Z, W)
-            //x = 120
-            enemigos.Add(enemigo); //añadir enemigos
-                                   //StartCoroutine(Ejercito(enemigos, posi, i));
-            Vector2 destino = posicionesFormacion[i];
-            StartCoroutine(Movimiento(enemigo, destino, i));
+            GameObject abejaTemp = Instantiate(abeja, new Vector2(100, 455), Quaternion.identity); 
+            enemigosO1.Add(abejaTemp); //añadir abeja
+            Vector2 destino = posisAbej[i];
+
+            //StartCoroutine(Movimiento(abejaTemp, destino, i));
         }
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject mariposaTemp = Instantiate(mariposa, new Vector2(140, 455), Quaternion.identity);
+            enemigosO1.Add(mariposaTemp); //añadir mariposa
+            Vector2 destino = posisMarip[i];
+
+            //StartCoroutine(Movimiento(mariposaTemp, destino, i));
+        }
+
+        StartCoroutine(MovementManager());
+
+        //Movimiento/Acomodo de ejercito
+        //StartCoroutine(Movimiento(enemigosO1, posicionesO1,5));
+
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    GameObject abejaTemp = Instantiate(abeja, new Vector2(100, 455), Quaternion.identity); //Quaternion (X, Y, Z, W)
+
+        //    //x = 120
+        //    enemigos.Add(abejaTemp); //añadir abeja
+        //    Vector2 destino = posisAbej[i];
+
+        //    StartCoroutine(Movimiento(abejaTemp, destino, i));
+        //}
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    GameObject mariposaTemp = Instantiate(mariposa, new Vector2(140, 455), Quaternion.identity); //Quaternion (X, Y, Z, W)
+
+        //    //x = 120
+        //    enemigos.Add(mariposaTemp); //añadir mariposa
+        //    Vector2 destino = posisMarip[i];
+
+        //    StartCoroutine(Movimiento(mariposaTemp, destino, i));
+        //}
+
+
+
     }
 
     // Update is called once per frame
@@ -49,13 +98,28 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(Ejercito(enemigos));
     }
 
-    private IEnumerator Movimiento(GameObject enemigo, Vector2 destino, int i)
+    private IEnumerator MovementManager(List<GameObject> enemigos)
     {
-        yield return new WaitForSeconds(0.5f * i); // Para escalonar la entrada
-        while (Vector2.Distance(enemigo.transform.position, destino) > 0.001f)
+        StartCoroutine(Movimiento(enemigos));
+        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(20f);
+    }
+
+    private IEnumerator Movimiento(List<GameObject> enemigos)   //, List<List<Vector2>>,int time
+    {
+        int contAb, contMar, contBos;
+
+        yield return new WaitForSeconds(0.5f * time); // Para escalonar la entrada
+
+        for (int i = 0; i < enemigos.Count; i++)
         {
-            enemigo.transform.position = Vector2.MoveTowards(enemigo.transform.position, destino,velocidad * Time.deltaTime);
-            yield return null;
+            if (enemigos[i])
+            while (Vector2.Distance(enemigosO1[i].transform.position, destino) > 0.001f)
+            {
+                enemigosO1[i].transform.position = Vector2.MoveTowards(enemigoO1[i].transform.position, destino, velocidad * Time.deltaTime);
+                yield return null;
+            }
         }
     }
 
