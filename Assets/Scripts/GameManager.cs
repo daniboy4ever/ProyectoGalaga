@@ -62,7 +62,11 @@ public class GameManager : MonoBehaviour
             //StartCoroutine(Movimiento(mariposaTemp, destino, i));
         }
 
-        StartCoroutine(MovementManager());
+
+
+        //StartCoroutine(MovementManager());
+
+
 
         //Movimiento/Acomodo de ejercito
         //StartCoroutine(Movimiento(enemigosO1, posicionesO1,5));
@@ -100,28 +104,30 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator MovementManager(List<GameObject> enemigos)
     {
-        StartCoroutine(Movimiento(enemigos));
+        //StartCoroutine(Movimiento(enemigos));
         yield return new WaitForSeconds(20f);
         yield return new WaitForSeconds(20f);
         yield return new WaitForSeconds(20f);
     }
 
-    private IEnumerator Movimiento(List<GameObject> enemigos)   //, List<List<Vector2>>,int time
-    {
-        int contAb, contMar, contBos;
 
-        yield return new WaitForSeconds(0.5f * time); // Para escalonar la entrada
 
-        for (int i = 0; i < enemigos.Count; i++)
-        {
-            if (enemigos[i])
-            while (Vector2.Distance(enemigosO1[i].transform.position, destino) > 0.001f)
-            {
-                enemigosO1[i].transform.position = Vector2.MoveTowards(enemigoO1[i].transform.position, destino, velocidad * Time.deltaTime);
-                yield return null;
-            }
-        }
-    }
+    //private IEnumerator Movimiento(List<GameObject> enemigos)   //, List<List<Vector2>>,int time
+    //{
+    //    int contAb, contMar, contBos;
+
+    //    yield return new WaitForSeconds(0.5f * time); // Para escalonar la entrada
+
+    //    for (int i = 0; i < enemigos.Count; i++)
+    //    {
+    //        if (enemigos[i])
+    //        while (Vector2.Distance(enemigosO1[i].transform.position, destino) > 0.001f)
+    //        {
+    //            enemigosO1[i].transform.position = Vector2.MoveTowards(enemigoO1[i].transform.position, destino, velocidad * Time.deltaTime);
+    //            yield return null;
+    //        }
+    //    }
+    //}
 
 
 }
