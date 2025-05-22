@@ -47,6 +47,6 @@ public class PlayerLifeManager : MonoBehaviour
     void VolverAlMenu()
     {
         Debug.Log("Menu");
-        //SceneManager.LoadScene("menu");
+        //SceneManager.LoadScene("Menu");
     }
 }

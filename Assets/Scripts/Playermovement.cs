@@ -28,8 +28,13 @@ public class Playermovement : MonoBehaviour
         {
             Debug.Log("¡La nave ha sido destruida!");
             Destroy(gameObject);
+            
+            FindObjectOfType<PlayerLifeManager>().JugadorMuerto();
+            Destroy(gameObject); 
         }
     }
+
+    
 }
 
 /*using UnityEngine;
