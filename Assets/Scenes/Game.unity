@@ -268,8 +268,8 @@ GameObject:
   - component: {fileID: 263266581}
   - component: {fileID: 263266583}
   - component: {fileID: 263266584}
-  - component: {fileID: 263266585}
   - component: {fileID: 263266586}
+  - component: {fileID: 263266587}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -378,20 +378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 0}
---- !u!114 &263266585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263266580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bbbe264124f76459bbbe3494884253, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntoBala: {fileID: 263266582}
-  bala: {fileID: 6716819905693759375, guid: d6a90970fce65c04fbb3babf2d82c336, type: 3}
 --- !u!61 &263266586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -438,6 +424,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.17, y: 0.18}
   m_EdgeRadius: 0
+--- !u!114 &263266587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263266580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880b31fa5391048439c0b300e63c9c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntoBala: {fileID: 263266582}
+  bala: {fileID: 6716819905693759375, guid: d6a90970fce65c04fbb3babf2d82c336, type: 3}
 --- !u!1 &288720335
 GameObject:
   m_ObjectHideFlags: 0
